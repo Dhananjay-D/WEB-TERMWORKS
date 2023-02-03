@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Termwork 6</title>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            let y = document.forms["myForm"]["contact"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            if (y == "") {
+                alert("Contact must be filled out");
+                return false;
+            }
+            if (y.length < 10 || y.length > 10) {
+                alert("Contact number should be exactly 10 digits.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Javascript Validation</h2>
+
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Name:<input type="text" name="fname"><br>
+        Contact No : <input type="text" name="contact">
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>
